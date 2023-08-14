@@ -1,9 +1,0 @@
-version: '3.8'
-
-services:
-  nginx:
-    build: ./nginx
-    ports:
-      - '81:80'
-    volumes:
-      - ./build:/code
