@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: $padding-min;
+  width: 100%;
 }
 
 .input-row {
@@ -12,9 +13,18 @@
   input {
     width: 100%;
     font-size: larger;
+    background-color: $color-secondary-hovered;
+    border: 0;
+    border-radius: $border-radius-s 0 0 $border-radius-s;
+    color: $text-light;
+    padding: 0.5em;
   }
 
   button {
     width: 40px;
+    border: 0;
+    border-left: 1px solid $color-secondary;
+    border-radius: 0 $border-radius-s $border-radius-s 0;
+    background-color: $color-secondary-hovered;
   }
 }

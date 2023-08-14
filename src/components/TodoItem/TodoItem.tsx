@@ -8,7 +8,7 @@ function TodoItem({ id, completed, title }: TodoItemType) {
   );
 
   return (
-    <article>
+    <article className="todo-item-wrapper">
       {renderIcon}
       {title}
     </article>

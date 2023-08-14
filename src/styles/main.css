@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5em;
+  width: 100%;
 }
 
 .input-row {
@@ -12,9 +13,18 @@
 .input-row input {
   width: 100%;
   font-size: larger;
+  background-color: #3d3d3d;
+  border: 0;
+  border-radius: 10px 0 0 10px;
+  color: whitesmoke;
+  padding: 0.5em;
 }
 .input-row button {
   width: 40px;
+  border: 0;
+  border-left: 1px solid #2a2a2a;
+  border-radius: 0 10px 10px 0;
+  background-color: #3d3d3d;
 }
 
 * {
@@ -32,6 +42,10 @@ body {
   font-family: "Inter Tight", sans-serif;
 }
 
+button {
+  cursor: pointer;
+}
+
 h1,
 h2,
 h3 {
@@ -43,6 +57,12 @@ h3 {
   font-size: 3em;
   font-weight: 200;
   text-transform: uppercase;
+  margin-bottom: 0.2em;
+}
+
+i {
+  font-size: 1.5em;
+  color: whitesmoke;
 }
 
 body {
@@ -74,4 +94,16 @@ body {
   background-color: #2a2a2a;
   border-radius: 10px;
   padding: 1em;
+}
+
+.todo-item-wrapper {
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.todo-item-wrapper:hover {
+  background-color: #3d3d3d;
 }/*# sourceMappingURL=main.css.map */

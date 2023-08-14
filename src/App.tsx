@@ -56,7 +56,9 @@ function App() {
             onChange={(e) => e.target.value}
             onKeyDown={handleKeyDown}
           ></input>
-          <button onClick={handleAddTodo}></button>
+          <button onClick={handleAddTodo}>
+            <i className="ri-add-circle-line"></i>
+          </button>
         </div>
         <div className="todos-wrapper">{renderItems}</div>
       </div>

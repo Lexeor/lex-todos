@@ -1,0 +1,14 @@
+// @import '../../styles/variables';
+
+.todo-item-wrapper {
+  width: 100%;
+  padding: 0.5em;
+  border-radius: $border-radius-s;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+
+  &:hover {
+    background-color: $color-secondary-hovered;
+  }
+}

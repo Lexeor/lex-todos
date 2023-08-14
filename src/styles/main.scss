@@ -18,6 +18,10 @@ body {
   font-family: 'Inter Tight', sans-serif;
 }
 
+button {
+  cursor: pointer;
+}
+
 // Typographics
 
 h1,
@@ -31,6 +35,12 @@ h3 {
   font-size: 3em;
   font-weight: 200;
   text-transform: uppercase;
+  margin-bottom: 0.2em;
+}
+
+i {
+  font-size: 1.5em;
+  color: $text-light;
 }
 
 // Layout
@@ -65,3 +75,5 @@ body {
   border-radius: $border-radius-s;
   padding: $padding-std;
 }
+
+@import '../components/TodoItem/todo-item';
