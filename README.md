@@ -42,6 +42,7 @@ npm start
 - [x] Add favicon for most supported devices
 - [x] Deploy at Github Pages
 - [ ] Implement todos editing
+- [ ] Add 'clear localStorage' button
 - [ ] Add Docker support
 - [ ] Deploy on own cloud server
 
