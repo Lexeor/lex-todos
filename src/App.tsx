@@ -61,6 +61,11 @@ function App() {
           </button>
         </div>
         <div className="todos-wrapper">{renderItems}</div>
+        <div className="todos-footer">
+          <span>{`${todos.length} items left`}</span>
+          <span>filters</span>
+          <span>Clear completed</span>
+        </div>
       </div>
     </div>
   );

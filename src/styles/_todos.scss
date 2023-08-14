@@ -28,3 +28,11 @@
     background-color: $color-secondary-hovered;
   }
 }
+
+.todos-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: rgba($text-light, 0.5);
+}
