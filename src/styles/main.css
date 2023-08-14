@@ -4,6 +4,19 @@
   gap: 0.5em;
 }
 
+.input-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.input-row input {
+  width: 100%;
+  font-size: larger;
+}
+.input-row button {
+  width: 40px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -46,6 +59,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: #111111;
   padding: 2em;
 }

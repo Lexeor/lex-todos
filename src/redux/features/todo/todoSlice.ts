@@ -7,18 +7,20 @@ export type TodoItemType = {
 };
 
 export interface TodoState {
-  todos: TodoItemType[] | null;
+  todos: TodoItemType[];
 }
 
 const initialState: TodoState = {
-  todos: null,
+  todos: [],
 };
 
 export const todoSlice = createSlice({
   name: 'todo',
   initialState,
   reducers: {
-    addTodo: (state, action: PayloadAction<TodoItemType>) => {},
+    addTodo: (state, action) => {
+      state.todos.push(action.payload);
+    },
     removeTodo: (state, action: PayloadAction<TodoItemType>) => {},
     toggleTodo: (state, action: PayloadAction<TodoItemType>) => {},
     clearCompleted: (state) => {},

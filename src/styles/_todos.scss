@@ -3,3 +3,18 @@
   flex-direction: column;
   gap: $padding-min;
 }
+
+.input-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  input {
+    width: 100%;
+    font-size: larger;
+  }
+
+  button {
+    width: 40px;
+  }
+}
