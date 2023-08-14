@@ -26,6 +26,10 @@ button {
     border: 0;
     color: rgba($text-light, 0.5);
 
+    &.underline {
+      text-decoration: underline;
+    }
+
     &:hover {
       color: $text-light;
     }

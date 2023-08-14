@@ -32,10 +32,17 @@
 
 .todos-footer {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   justify-content: space-between;
   font-size: 0.8rem;
   color: rgba(245, 245, 245, 0.5);
+}
+.todos-footer .filters {
+  margin: 0 auto;
+}
+.todos-footer .btn-clear {
+  text-align: end;
 }
 
 .blank-list {
@@ -49,6 +56,17 @@
   font-size: 0.8rem;
 }
 
+@media screen and (max-width: 500px) {
+  .todos-footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+  }
+  .todos-footer .filters {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -71,6 +89,9 @@ button.inline-button {
   background-color: transparent;
   border: 0;
   color: rgba(245, 245, 245, 0.5);
+}
+button.inline-button.underline {
+  text-decoration: underline;
 }
 button.inline-button:hover {
   color: whitesmoke;

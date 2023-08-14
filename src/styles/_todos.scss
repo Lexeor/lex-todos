@@ -34,10 +34,19 @@
 
 .todos-footer {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   justify-content: space-between;
   font-size: 0.8rem;
   color: rgba($text-light, 0.5);
+
+  .filters {
+    margin: 0 auto;
+  }
+
+  .btn-clear {
+    text-align: end;
+  }
 }
 
 .blank-list {
@@ -49,4 +58,17 @@
   font-weight: 300;
   height: 38px;
   font-size: 0.8rem;
+}
+
+@media screen and (max-width: 500px) {
+  .todos-footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+
+    .filters {
+      grid-row-start: 1;
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
 }

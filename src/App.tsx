@@ -101,10 +101,13 @@ function App() {
         </div>
         <div className="todos-footer">
           <span>{`${adtiveItems} items left`}</span>
-          <span>
+          <span className="filters">
             <Filter />
           </span>
-          <button className="inline-button" onClick={handleClearCompleted}>
+          <button
+            className="inline-button underline btn-clear"
+            onClick={handleClearCompleted}
+          >
             Clear completed
           </button>
         </div>
