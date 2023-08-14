@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter Tight", sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #111111;
+  color: whitesmoke;
+}
+
+.App {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #111111;
+}/*# sourceMappingURL=main.css.map */
