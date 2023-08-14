@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-type TodoItem = {
+export type TodoItemType = {
   id: number;
   title: string;
   completed: boolean;
 };
 
 export interface TodoState {
-  todos: TodoItem[] | null;
+  todos: TodoItemType[] | null;
 }
 
 const initialState: TodoState = {
@@ -18,9 +18,9 @@ export const todoSlice = createSlice({
   name: 'todo',
   initialState,
   reducers: {
-    addTodo: (state, action: PayloadAction<TodoItem>) => {},
-    removeTodo: (state, action: PayloadAction<TodoItem>) => {},
-    toggleTodo: (state, action: PayloadAction<TodoItem>) => {},
+    addTodo: (state, action: PayloadAction<TodoItemType>) => {},
+    removeTodo: (state, action: PayloadAction<TodoItemType>) => {},
+    toggleTodo: (state, action: PayloadAction<TodoItemType>) => {},
     clearCompleted: (state) => {},
   },
 });
