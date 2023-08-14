@@ -34,6 +34,7 @@ npm start
 
 - Sliding menu with delete/edit buttons for every Todo Item for better mobile experience.
 - Better item remove behaviour (grayout until next refresh to be able to restore accidently deleted item).
+- Mobile design needs more polishing.
 
 ## Roadmap
 
