@@ -4,7 +4,7 @@ Simple Todos application for practicing purpose :)
 
 ## Test it right now
 
-Deployed at [Github Pages]()
+Deployed at [Github Pages](https://lexeor.github.io/lex-todos/)
 
 ## Features
 
@@ -32,7 +32,7 @@ npm start
 
 - [x] Add localStorage sync
 - [x] Add favicon for most supported devices
-- [ ] Deploy at Github Pages
+- [x] Deploy at Github Pages
 - [ ] Implement todos editing
 
 ## License
