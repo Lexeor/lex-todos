@@ -15,7 +15,7 @@ export interface TodoState {
 }
 
 const initialState: TodoState = {
-  loading: false,
+  loading: true,
   todos: [],
   active: 0,
   error: '',
@@ -26,7 +26,6 @@ export const fetchTodos = createAsyncThunk('todos/fetchTodos', async () => {
 
   if (lsData === null) {
     const res = await axios.get('/users/1/todos?_limit=5');
-    localStorage.setItem('lex-todos', JSON.stringify(res.data));
     return res.data;
   } else {
     return JSON.parse(lsData);
@@ -88,6 +87,7 @@ export const todoSlice = createSlice({
       (state, action: PayloadAction<TodoItemType[]>) => {
         state.loading = false;
         state.todos = action.payload;
+        localStorage.setItem('lex-todos', JSON.stringify(action.payload));
         state.error = '';
         state.active = action.payload.filter((item) => !item.completed).length;
       }

@@ -1,5 +1,10 @@
 import { useEffect, useRef, KeyboardEvent } from 'react';
 import { useAppDispatch, useAppSelector } from './redux/store';
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+
 import TodoItem from './components/TodoItem/TodoItem';
 import Filter from './components/Filter/Filter';
 import TaskSkeleton from './components/Skeletons/TaskSkeleton';
@@ -15,6 +20,7 @@ function App() {
 
   // Redux
   const loading = useAppSelector((state) => state.todo.loading);
+  const error = useAppSelector((state) => state.todo.error);
   const todos = useAppSelector((state) => state.todo.todos);
   const filter = useAppSelector((state) => state.filter.current);
   const adtiveItems = useAppSelector((state) => state.todo.active);
@@ -47,6 +53,13 @@ function App() {
     dispatch(fetchTodos());
   }, []);
 
+  useEffect(() => {
+    // Error show
+    if (error !== '') {
+      toast.error(error);
+    }
+  }, [error]);
+
   // Renders & styles
   const filteredItems = todos.filter((item) => {
     switch (filter) {
@@ -69,6 +82,7 @@ function App() {
 
   return (
     <div className="App">
+      <ToastContainer />
       <h2 className="main-header">todos</h2>
       <div className="container">
         <div className="input-row">
