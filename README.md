@@ -12,7 +12,7 @@ Deployed at:
 ## Features
 
 - Initial 5 todos fetched from [JSON Placeholder API](https://jsonplaceholder.typicode.com).
-- Todos state is syncronized with localStorage and managed by Redux Toolkit.
+- Todos state managed by Redux Toolkit and synchronized with localStorage.
 - Clear all finished tasks in one click (or tap).
 - Mobile friendly.
 
