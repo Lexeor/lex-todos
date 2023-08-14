@@ -3,12 +3,19 @@ import axios from './utils/fetch-facade';
 import { useAppDispatch, useAppSelector } from './redux/store';
 import TodoItem from './components/TodoItem/TodoItem';
 import Filter from './components/Filter/Filter';
-import { addTodo, clearCompleted } from './redux/features/todo/todoSlice';
+import TaskSkeleton from './components/Skeletons/TaskSkeleton';
+
+import {
+  addTodo,
+  clearCompleted,
+  fetchTodos,
+} from './redux/features/todo/todoSlice';
 
 function App() {
   const refInput = useRef<HTMLInputElement>(null);
 
   // Redux
+  const loading = useAppSelector((state) => state.todo.loading);
   const todos = useAppSelector((state) => state.todo.todos);
   const filter = useAppSelector((state) => state.filter.current);
   const adtiveItems = useAppSelector((state) => state.todo.active);
@@ -17,11 +24,6 @@ function App() {
   const newId = todos.length > 0 ? todos[todos.length - 1].id + 1 : 0;
 
   // Functions
-  const getTodos = async () => {
-    const res = await axios.get('/users/1/todos?_limit=5');
-    console.log(res);
-  };
-
   const handleKeyDown = (event: KeyboardEvent) => {
     if (refInput.current?.value !== '' && event.key === 'Enter') {
       handleAddTodo();
@@ -43,7 +45,7 @@ function App() {
 
   // Side effects
   useEffect(() => {
-    getTodos();
+    dispatch(fetchTodos());
   }, []);
 
   // Renders & styles
@@ -81,7 +83,9 @@ function App() {
             <i className="ri-add-circle-line"></i>
           </button>
         </div>
-        <div className="todos-wrapper">{renderItems}</div>
+        <div className="todos-wrapper">
+          {loading ? <TaskSkeleton /> : renderItems}
+        </div>
         <div className="todos-footer">
           <span>{`${adtiveItems} items left`}</span>
           <span>

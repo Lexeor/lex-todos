@@ -1,4 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from '../../../utils/fetch-facade';
 
 export type TodoItemType = {
   id: number;
@@ -7,14 +8,23 @@ export type TodoItemType = {
 };
 
 export interface TodoState {
+  loading: boolean;
   todos: TodoItemType[];
   active: number;
+  error: string | undefined;
 }
 
 const initialState: TodoState = {
+  loading: false,
   todos: [],
   active: 0,
+  error: '',
 };
+
+export const fetchTodos = createAsyncThunk('todos/fetchTodos', async () => {
+  const res = await axios.get('/users/1/todos?_limit=5');
+  return res.data;
+});
 
 export const todoSlice = createSlice({
   name: 'todo',
@@ -57,6 +67,25 @@ export const todoSlice = createSlice({
       state.todos = filtered;
       state.active = filtered.length;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchTodos.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(
+      fetchTodos.fulfilled,
+      (state, action: PayloadAction<TodoItemType[]>) => {
+        state.loading = false;
+        state.todos = action.payload;
+        state.error = '';
+        state.active = action.payload.filter((item) => !item.completed).length;
+      }
+    );
+    builder.addCase(fetchTodos.rejected, (state, action) => {
+      state.loading = false;
+      state.todos = [];
+      state.error = action.error.message;
+    });
   },
 });
 

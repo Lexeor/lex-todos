@@ -94,6 +94,7 @@ body {
 
 @import '../components/TodoItem/todo-item';
 @import '../components/Filter/filter';
+@import '../components/Skeletons/task-skeleton';
 
 @media screen and (max-width: 600px) {
   .App {

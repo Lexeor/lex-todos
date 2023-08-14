@@ -1,0 +1,33 @@
+.skeleton {
+  animation: skeleton-loading 0.8s linear infinite alternate;
+}
+
+.task-skeleton-wrapper {
+  padding: 0.5em;
+  display: flex;
+  gap: 0.5em;
+}
+
+.task-skeleton-icon {
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  border-radius: $border-radius-m;
+}
+
+.task-skeleton-line {
+  height: 20px;
+  width: 100%;
+  background-color: red;
+  border-radius: $border-radius-m;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsla(199, 20%, 70%, 0.6);
+  }
+
+  100% {
+    background-color: hsla(204, 20%, 95%, 0.2);
+  }
+}
