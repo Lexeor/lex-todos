@@ -31,9 +31,10 @@ npm start
 
 - React 18
 - Typescript
-- Redux Toolkit as a state manager.
-- React Toastify for showing errors.
-- Axios for HTTP requests to the API.
+- SCSS preprocessor for styling
+- Redux Toolkit as a state manager
+- React Toastify for showing errors
+- Axios for HTTP requests to the API
 
 ### Devops
 
