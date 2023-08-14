@@ -53,6 +53,14 @@ body {
 button {
   cursor: pointer;
 }
+button.inline-button {
+  background-color: transparent;
+  border: 0;
+  color: rgba(245, 245, 245, 0.5);
+}
+button.inline-button:hover {
+  color: whitesmoke;
+}
 
 h1,
 h2,

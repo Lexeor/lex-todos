@@ -2,7 +2,7 @@ import { useEffect, useRef, KeyboardEvent } from 'react';
 import axios from './utils/fetch-facade';
 import { useAppDispatch, useAppSelector } from './redux/store';
 import TodoItem from './components/TodoItem/TodoItem';
-import { addTodo } from './redux/features/todo/todoSlice';
+import { addTodo, clearCompleted } from './redux/features/todo/todoSlice';
 
 function App() {
   const refInput = useRef<HTMLInputElement>(null);
@@ -30,6 +30,10 @@ function App() {
       );
       refInput.current.value = '';
     }
+  };
+
+  const handleClearCompleted = () => {
+    dispatch(clearCompleted());
   };
 
   // Side effects
@@ -64,7 +68,9 @@ function App() {
         <div className="todos-footer">
           <span>{`${todos.length} items left`}</span>
           <span>filters</span>
-          <span>Clear completed</span>
+          <button className="inline-button" onClick={handleClearCompleted}>
+            Clear completed
+          </button>
         </div>
       </div>
     </div>

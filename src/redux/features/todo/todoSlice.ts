@@ -23,7 +23,10 @@ export const todoSlice = createSlice({
     },
     removeTodo: (state, action: PayloadAction<TodoItemType>) => {},
     toggleTodo: (state, action: PayloadAction<TodoItemType>) => {},
-    clearCompleted: (state) => {},
+    clearCompleted: (state) => {
+      const filtered = state.todos.filter((todo) => !todo.completed);
+      state.todos = filtered;
+    },
   },
 });
 
