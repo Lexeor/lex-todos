@@ -47,23 +47,23 @@ function App() {
   }, []);
 
   // Renders & styles
+  const filteredItems = todos.filter((item) => {
+    switch (filter) {
+      case 'All':
+      default:
+        return item;
+      case 'Active':
+        return item.completed === false;
+      case 'Completed':
+        return item.completed === true;
+    }
+  });
+
   const renderItems =
-    todos.length > 0 ? (
-      todos
-        .filter((item) => {
-          switch (filter) {
-            case 'All':
-            default:
-              return item;
-            case 'Active':
-              return item.completed === false;
-            case 'Completed':
-              return item.completed === true;
-          }
-        })
-        .map((item) => <TodoItem key={item.id} {...item} />)
+    filteredItems.length > 0 ? (
+      filteredItems.map((item) => <TodoItem key={item.id} {...item} />)
     ) : (
-      <>No items to diplay.</>
+      <div className="blank-list">No items to display</div>
     );
 
   return (

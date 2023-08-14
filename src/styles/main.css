@@ -35,6 +35,17 @@
   color: rgba(245, 245, 245, 0.5);
 }
 
+.blank-list {
+  padding: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 300;
+  height: 38px;
+  font-size: 0.8rem;
+}
+
 * {
   box-sizing: border-box;
 }
