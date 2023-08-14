@@ -4,7 +4,10 @@ Simple Todo application for practicing purpose :)
 
 ## Available right now
 
-Deployed at [Github Pages](https://lexeor.github.io/lex-todos/)
+Deployed at:
+
+- [Github Pages](https://lexeor.github.io/lex-todos/)
+- [Cloud Server](http://158.160.108.4:81/)
 
 ## Features
 
@@ -41,10 +44,10 @@ npm start
 - [x] Add localStorage sync
 - [x] Add favicon for most supported devices
 - [x] Deploy at Github Pages
+- [x] Add Docker support
+- [x] Deploy on own cloud server
 - [ ] Implement todos editing
 - [ ] Add 'clear localStorage' button
-- [ ] Add Docker support
-- [ ] Deploy on own cloud server
 
 ## License
 
