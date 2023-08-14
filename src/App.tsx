@@ -24,10 +24,10 @@ function App() {
   };
 
   const handleAddTodo = () => {
-    dispatch(
-      addTodo({ id: 0, title: refInput.current?.value, completed: false })
-    );
-    if (refInput.current) {
+    if (refInput.current && refInput.current?.value !== '') {
+      dispatch(
+        addTodo({ id: 0, title: refInput.current?.value, completed: false })
+      );
       refInput.current.value = '';
     }
   };
