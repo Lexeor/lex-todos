@@ -22,8 +22,15 @@ const initialState: TodoState = {
 };
 
 export const fetchTodos = createAsyncThunk('todos/fetchTodos', async () => {
-  const res = await axios.get('/users/1/todos?_limit=5');
-  return res.data;
+  const lsData = localStorage.getItem('lex-todos');
+
+  if (lsData === null) {
+    const res = await axios.get('/users/1/todos?_limit=5');
+    localStorage.setItem('lex-todos', JSON.stringify(res.data));
+    return res.data;
+  } else {
+    return JSON.parse(lsData);
+  }
 });
 
 export const todoSlice = createSlice({
@@ -32,6 +39,7 @@ export const todoSlice = createSlice({
   reducers: {
     addTodo: (state, action) => {
       state.todos.push(action.payload);
+      localStorage.setItem('lex-todos', JSON.stringify(state.todos));
       state.active++;
     },
     removeTodo: (state, action: PayloadAction<number>) => {
@@ -44,6 +52,7 @@ export const todoSlice = createSlice({
       });
 
       state.todos = filtered;
+      localStorage.setItem('lex-todos', JSON.stringify(filtered));
       if (!isCompleted) state.active--;
     },
     toggleTodo: (state, action: PayloadAction<number>) => {
@@ -61,10 +70,12 @@ export const todoSlice = createSlice({
       });
 
       state.todos = modified;
+      localStorage.setItem('lex-todos', JSON.stringify(modified));
     },
     clearCompleted: (state) => {
       const filtered = state.todos.filter((todo) => !todo.completed);
       state.todos = filtered;
+      localStorage.setItem('lex-todos', JSON.stringify(filtered));
       state.active = filtered.length;
     },
   },

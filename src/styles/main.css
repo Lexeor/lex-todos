@@ -186,14 +186,12 @@ body {
 .task-skeleton-icon {
   height: 20px;
   width: 20px;
-  background-color: red;
   border-radius: 20px;
 }
 
 .task-skeleton-line {
   height: 20px;
   width: 100%;
-  background-color: red;
   border-radius: 20px;
 }
 

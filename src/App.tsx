@@ -1,5 +1,4 @@
 import { useEffect, useRef, KeyboardEvent } from 'react';
-import axios from './utils/fetch-facade';
 import { useAppDispatch, useAppSelector } from './redux/store';
 import TodoItem from './components/TodoItem/TodoItem';
 import Filter from './components/Filter/Filter';
