@@ -9,6 +9,7 @@ function App() {
 
   // Redux
   const todos = useAppSelector((state) => state.todo.todos);
+  const adtiveItems = useAppSelector((state) => state.todo.active);
   const dispatch = useAppDispatch();
 
   const newId = todos.length > 0 ? todos[todos.length - 1].id + 1 : 0;
@@ -68,7 +69,7 @@ function App() {
         </div>
         <div className="todos-wrapper">{renderItems}</div>
         <div className="todos-footer">
-          <span>{`${todos.length} items left`}</span>
+          <span>{`${adtiveItems} items left`}</span>
           <span>filters</span>
           <button className="inline-button" onClick={handleClearCompleted}>
             Clear completed
