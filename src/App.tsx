@@ -79,7 +79,7 @@ function App() {
             onKeyDown={handleKeyDown}
           ></input>
           <button onClick={handleAddTodo}>
-            <i className="ri-add-circle-line"></i>
+            <i className="ri-add-line"></i>
           </button>
         </div>
         <div className="todos-wrapper">

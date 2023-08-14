@@ -9,23 +9,26 @@
   display: flex;
   flex-direction: row;
   width: 100%;
+  position: relative;
 
   input {
     width: 100%;
     font-size: larger;
     background-color: $color-secondary-hovered;
     border: 0;
-    border-radius: $border-radius-s 0 0 $border-radius-s;
+    border-radius: $border-radius-s;
     color: $text-light;
-    padding: 0.5em;
+    padding: 0.5em 2em 0.5em 0.5em;
   }
 
   button {
     width: 40px;
+    height: 40px;
     border: 0;
-    border-left: 1px solid $color-secondary;
-    border-radius: 0 $border-radius-s $border-radius-s 0;
-    background-color: $color-secondary-hovered;
+    background-color: transparent;
+    position: absolute;
+    top: 1;
+    right: 0;
   }
 }
 
