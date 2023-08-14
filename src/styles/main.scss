@@ -94,3 +94,13 @@ body {
 
 @import '../components/TodoItem/todo-item';
 @import '../components/Filter/filter';
+
+@media screen and (max-width: 600px) {
+  .App {
+    padding: 0.5em;
+  }
+
+  .container {
+    width: 100%;
+  }
+}
