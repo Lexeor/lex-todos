@@ -12,7 +12,19 @@ function App() {
     getTodos();
   }, []);
 
-  return <div className="App">todos</div>;
+  return (
+    <div className="App">
+      <div className="container">
+        <h2 className="main-header">todos</h2>
+        <div className="todos-wrapper">
+          <div>Card1</div>
+          <div>Card1</div>
+          <div>Card1</div>
+          <div>Card1</div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default App;
