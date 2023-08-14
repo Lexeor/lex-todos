@@ -133,7 +133,7 @@ body {
   padding: 0.5em;
   border-radius: 10px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5em;
 }
 .todo-item-wrapper span {
@@ -142,8 +142,8 @@ body {
 .todo-item-wrapper:hover {
   background-color: #3d3d3d;
 }
-.todo-item-wrapper:hover .btn-delete {
-  display: block;
+.todo-item-wrapper:hover .btn-delete i {
+  color: #dc3545;
 }
 
 .completed {
@@ -151,11 +151,8 @@ body {
   color: rgba(245, 245, 245, 0.5);
 }
 
-.btn-delete {
-  display: none;
-}
 .btn-delete i {
-  color: #dc3545;
+  color: transparent;
 }
 
 .filters-wrapper {
