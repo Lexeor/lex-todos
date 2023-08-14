@@ -1,0 +1,15 @@
+.filters-wrapper {
+  display: flex;
+  gap: 0.5em;
+}
+
+.filter-button {
+  background-color: transparent;
+  border: 1px solid $color-secondary;
+  color: rgba($text-light, 0.5);
+
+  &.active {
+    border: 1px solid $color-secondary-hovered;
+    border-radius: 3px;
+  }
+}

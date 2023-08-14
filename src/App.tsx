@@ -2,6 +2,7 @@ import { useEffect, useRef, KeyboardEvent } from 'react';
 import axios from './utils/fetch-facade';
 import { useAppDispatch, useAppSelector } from './redux/store';
 import TodoItem from './components/TodoItem/TodoItem';
+import Filter from './components/Filter/Filter';
 import { addTodo, clearCompleted } from './redux/features/todo/todoSlice';
 
 function App() {
@@ -70,7 +71,9 @@ function App() {
         <div className="todos-wrapper">{renderItems}</div>
         <div className="todos-footer">
           <span>{`${adtiveItems} items left`}</span>
-          <span>filters</span>
+          <span>
+            <Filter />
+          </span>
           <button className="inline-button" onClick={handleClearCompleted}>
             Clear completed
           </button>

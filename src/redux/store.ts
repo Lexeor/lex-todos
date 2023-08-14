@@ -3,10 +3,12 @@ import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 import todoReducer from './features/todo/todoSlice';
+import filterReducer from './features/filter/filterSlice';
 
 export const store = configureStore({
   reducer: {
     todo: todoReducer,
+    filter: filterReducer,
   },
 });
 

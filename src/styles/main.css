@@ -132,4 +132,19 @@ body {
 .completed {
   text-decoration: line-through;
   color: rgba(245, 245, 245, 0.5);
+}
+
+.filters-wrapper {
+  display: flex;
+  gap: 0.5em;
+}
+
+.filter-button {
+  background-color: transparent;
+  border: 1px solid #2a2a2a;
+  color: rgba(245, 245, 245, 0.5);
+}
+.filter-button.active {
+  border: 1px solid #3d3d3d;
+  border-radius: 3px;
 }/*# sourceMappingURL=main.css.map */
