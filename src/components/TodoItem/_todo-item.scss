@@ -8,12 +8,28 @@
   align-items: center;
   gap: 0.5em;
 
+  span {
+    flex-grow: 1;
+  }
+
   &:hover {
     background-color: $color-secondary-hovered;
+
+    .btn-delete {
+      display: block;
+    }
   }
 }
 
 .completed {
   text-decoration: line-through;
   color: rgba($text-light, 0.5);
+}
+
+.btn-delete {
+  display: none;
+
+  i {
+    color: #dc3545;
+  }
 }

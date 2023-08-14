@@ -8,13 +8,11 @@ export type TodoItemType = {
 
 export interface TodoState {
   todos: TodoItemType[];
-  total: number;
   active: number;
 }
 
 const initialState: TodoState = {
   todos: [],
-  total: 0,
   active: 0,
 };
 
@@ -24,10 +22,20 @@ export const todoSlice = createSlice({
   reducers: {
     addTodo: (state, action) => {
       state.todos.push(action.payload);
-      state.total++;
       state.active++;
     },
-    removeTodo: (state, action: PayloadAction<TodoItemType>) => {},
+    removeTodo: (state, action: PayloadAction<number>) => {
+      let isCompleted = false;
+      const filtered = state.todos.filter((item) => {
+        // Check if deleting item is completed
+        if (item.id === action.payload) isCompleted = item.completed;
+
+        return item.id !== action.payload;
+      });
+
+      state.todos = filtered;
+      if (!isCompleted) state.active--;
+    },
     toggleTodo: (state, action: PayloadAction<number>) => {
       const modified = state.todos.map((item) => {
         if (item.id === action.payload) {
@@ -47,7 +55,6 @@ export const todoSlice = createSlice({
     clearCompleted: (state) => {
       const filtered = state.todos.filter((todo) => !todo.completed);
       state.todos = filtered;
-      state.total = filtered.length;
       state.active = filtered.length;
     },
   },

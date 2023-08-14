@@ -10,6 +10,7 @@ function App() {
 
   // Redux
   const todos = useAppSelector((state) => state.todo.todos);
+  const filter = useAppSelector((state) => state.filter.current);
   const adtiveItems = useAppSelector((state) => state.todo.active);
   const dispatch = useAppDispatch();
 
@@ -48,7 +49,19 @@ function App() {
   // Renders & styles
   const renderItems =
     todos.length > 0 ? (
-      todos.map((item) => <TodoItem key={item.id} {...item} />)
+      todos
+        .filter((item) => {
+          switch (filter) {
+            case 'All':
+            default:
+              return item;
+            case 'Active':
+              return item.completed === false;
+            case 'Completed':
+              return item.completed === true;
+          }
+        })
+        .map((item) => <TodoItem key={item.id} {...item} />)
     ) : (
       <>No items to diplay.</>
     );
