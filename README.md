@@ -8,11 +8,10 @@ Deployed at [Github Pages](https://lexeor.github.io/lex-todos/)
 
 ## Features
 
-- Add and Remove Todos with on-screen buttons (for mobile) or add with simple Enter key press for desktop.
 - Initial 5 todos fetched from (JSON Placeholder API)[https://jsonplaceholder.typicode.com].
 - Todos state is syncronized with localStorage and managed by Redux Toolkit.
 - Clear all finished tasks in one click (or tap).
-- Mobile support.
+- Mobile friendly.
 
 ## Installation
 
