@@ -1,6 +1,6 @@
 # Lex Todos
 
-Simple Todos application for practicing purpose :)
+Simple Todo application for practicing purpose :)
 
 ## Available right now
 
@@ -8,7 +8,7 @@ Deployed at [Github Pages](https://lexeor.github.io/lex-todos/)
 
 ## Features
 
-- Initial 5 todos fetched from (JSON Placeholder API)[https://jsonplaceholder.typicode.com].
+- Initial 5 todos fetched from [JSON Placeholder API](https://jsonplaceholder.typicode.com).
 - Todos state is syncronized with localStorage and managed by Redux Toolkit.
 - Clear all finished tasks in one click (or tap).
 - Mobile friendly.
