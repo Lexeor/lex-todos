@@ -22,7 +22,16 @@ export const todoSlice = createSlice({
       state.todos.push(action.payload);
     },
     removeTodo: (state, action: PayloadAction<TodoItemType>) => {},
-    toggleTodo: (state, action: PayloadAction<TodoItemType>) => {},
+    toggleTodo: (state, action: PayloadAction<number>) => {
+      const modified = state.todos.map((item) => {
+        if (item.id === action.payload) {
+          item.completed = !item.completed;
+        }
+        return item;
+      });
+
+      state.todos = modified;
+    },
     clearCompleted: (state) => {
       const filtered = state.todos.filter((todo) => !todo.completed);
       state.todos = filtered;

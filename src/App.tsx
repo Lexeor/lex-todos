@@ -11,6 +11,8 @@ function App() {
   const todos = useAppSelector((state) => state.todo.todos);
   const dispatch = useAppDispatch();
 
+  const newId = todos.length > 0 ? todos[todos.length - 1].id + 1 : 0;
+
   // Functions
   const getTodos = async () => {
     const res = await axios.get('/users/1/todos?_limit=5');
@@ -26,7 +28,7 @@ function App() {
   const handleAddTodo = () => {
     if (refInput.current && refInput.current?.value !== '') {
       dispatch(
-        addTodo({ id: 0, title: refInput.current?.value, completed: false })
+        addTodo({ id: newId, title: refInput.current?.value, completed: false })
       );
       refInput.current.value = '';
     }
@@ -44,7 +46,7 @@ function App() {
   // Renders & styles
   const renderItems =
     todos.length > 0 ? (
-      todos.map((item) => <TodoItem {...item} />)
+      todos.map((item) => <TodoItem key={item.id} {...item} />)
     ) : (
       <>No items to diplay.</>
     );

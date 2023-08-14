@@ -61,6 +61,11 @@ button.inline-button {
 button.inline-button:hover {
   color: whitesmoke;
 }
+button.toggle-button {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
 
 h1,
 h2,
@@ -122,4 +127,9 @@ body {
 }
 .todo-item-wrapper:hover {
   background-color: #3d3d3d;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: rgba(245, 245, 245, 0.5);
 }/*# sourceMappingURL=main.css.map */

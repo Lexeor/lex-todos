@@ -12,3 +12,8 @@
     background-color: $color-secondary-hovered;
   }
 }
+
+.completed {
+  text-decoration: line-through;
+  color: rgba($text-light, 0.5);
+}
