@@ -27,11 +27,18 @@ npm start
 
 ## Technologies
 
+### Development
+
 - React 18
 - Typescript
 - Redux Toolkit as a state manager.
 - React Toastify for showing errors.
 - Axios for HTTP requests to the API.
+
+### Devops
+
+- Docker
+- nginx
 
 ## Ways to improve
 
