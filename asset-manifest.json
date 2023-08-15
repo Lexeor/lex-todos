@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/lex-todos/static/css/main.76f440d1.css",
-    "main.js": "/lex-todos/static/js/main.1a9fe47f.js",
+    "main.css": "/lex-todos/static/css/main.ac0fe9c1.css",
+    "main.js": "/lex-todos/static/js/main.e23a3851.js",
     "index.html": "/lex-todos/index.html",
-    "main.76f440d1.css.map": "/lex-todos/static/css/main.76f440d1.css.map",
-    "main.1a9fe47f.js.map": "/lex-todos/static/js/main.1a9fe47f.js.map"
+    "main.ac0fe9c1.css.map": "/lex-todos/static/css/main.ac0fe9c1.css.map",
+    "main.e23a3851.js.map": "/lex-todos/static/js/main.e23a3851.js.map"
   },
   "entrypoints": [
-    "static/css/main.76f440d1.css",
-    "static/js/main.1a9fe47f.js"
+    "static/css/main.ac0fe9c1.css",
+    "static/js/main.e23a3851.js"
   ]
 }
