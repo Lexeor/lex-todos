@@ -41,6 +41,20 @@ export const todoSlice = createSlice({
       localStorage.setItem('lex-todos', JSON.stringify(state.todos));
       state.active++;
     },
+    editTodo: (state, action: PayloadAction<{ id: number; title: string }>) => {
+      const todos = state.todos;
+
+      todos.map((todo) => {
+        if (todo.id === action.payload.id) {
+          todo.title = action.payload.title;
+          return todo;
+        }
+        return todo;
+      });
+
+      localStorage.setItem('lex-todos', JSON.stringify(todos));
+      state.todos = todos;
+    },
     removeTodo: (state, action: PayloadAction<number>) => {
       let isCompleted = false;
       const filtered = state.todos.filter((item) => {
@@ -100,7 +114,7 @@ export const todoSlice = createSlice({
   },
 });
 
-export const { addTodo, removeTodo, toggleTodo, clearCompleted } =
+export const { addTodo, editTodo, removeTodo, toggleTodo, clearCompleted } =
   todoSlice.actions;
 
 export default todoSlice.reducer;

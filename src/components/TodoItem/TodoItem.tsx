@@ -3,6 +3,7 @@ import {
   TodoItemType,
   toggleTodo,
   removeTodo,
+  editTodo,
 } from '../../redux/features/todo/todoSlice';
 import { useAppDispatch } from '../../redux/store';
 
@@ -25,7 +26,7 @@ function TodoItem({ id, completed, title }: TodoItemType) {
 
   const handleEditTodo = (id: number) => {
     if (isEditing) {
-      // dispatch(editTodo(id));
+      dispatch(editTodo({ id, title: titleValue }));
     }
 
     setIsEditing((prev) => !prev);
