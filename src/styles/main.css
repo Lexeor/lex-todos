@@ -172,6 +172,9 @@ body {
 .todo-item-wrapper:hover .btn-edit i {
   color: rgba(245, 245, 245, 0.5);
 }
+.todo-item-wrapper:hover .btn-apply i {
+  color: #138636;
+}
 
 .completed {
   text-decoration: line-through;

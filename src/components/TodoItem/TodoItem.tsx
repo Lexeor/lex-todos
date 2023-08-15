@@ -22,8 +22,11 @@ function TodoItem({ id, completed, title }: TodoItemType) {
   };
 
   const handleEditTodo = (id: number) => {
-    console.log(id);
-    // dispatch(removeTodo(id));
+    if (isEditing) {
+      // dispatch(editTodo(id));
+    }
+
+    setIsEditing((prev) => !prev);
   };
 
   // Renders & classes
@@ -35,17 +38,22 @@ function TodoItem({ id, completed, title }: TodoItemType) {
 
   const titleClass = completed ? 'completed' : '';
 
+  const editButtonClass = !isEditing
+    ? 'toggle-button btn-edit'
+    : 'toggle-button btn-apply';
+
   return (
     <article className="todo-item-wrapper">
       <button className="toggle-button" onClick={() => handleToggleTodo(id)}>
         {renderIcon}
       </button>
       <span className={titleClass}>{title}</span>
-      <button
-        className="toggle-button btn-edit"
-        onClick={() => handleEditTodo(id)}
-      >
-        <i className="ri-pencil-line"></i>
+      <button className={editButtonClass} onClick={() => handleEditTodo(id)}>
+        {isEditing ? (
+          <i className="ri-check-line"></i>
+        ) : (
+          <i className="ri-pencil-line"></i>
+        )}
       </button>
       <button
         className="toggle-button btn-delete"
