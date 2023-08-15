@@ -3,7 +3,8 @@
 FROM node:18-alpine as builder
 RUN mkdir /code
 WORKDIR /code
-COPY ["package.json", "package-lock.json*", "./"]
+COPY package-lock.json ./
+COPY package-cloud.json ./package.json
 RUN npm i
 COPY . .
 RUN npm run build
