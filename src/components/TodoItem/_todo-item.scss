@@ -47,11 +47,24 @@
   }
 }
 
+.btn-apply {
+  i {
+    color: #138636;
+  }
+}
+
 .inline-input {
   width: 100%;
-  background-color: $color-background-dark;
+  background-color: $color-secondary-shaded;
   border: 0;
+  font-size: 1em;
   color: $text-light;
-  padding: 0.5em;
+  padding: 0.3em;
   border-radius: $border-radius-s;
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    border: 1px solid $color-secondary-hovered;
+  }
 }
