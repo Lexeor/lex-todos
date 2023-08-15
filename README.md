@@ -54,7 +54,7 @@ npm start
 - [x] Deploy at Github Pages
 - [x] Add Docker support
 - [x] Deploy on own cloud server
-- [ ] Implement todos editing
+- [x] Implement todos editing
 - [ ] Add 'clear localStorage' button
 
 ## License
