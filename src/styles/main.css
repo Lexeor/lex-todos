@@ -169,13 +169,17 @@ body {
 .todo-item-wrapper:hover .btn-delete i {
   color: #dc3545;
 }
+.todo-item-wrapper:hover .btn-edit i {
+  color: rgba(245, 245, 245, 0.5);
+}
 
 .completed {
   text-decoration: line-through;
   color: rgba(245, 245, 245, 0.5);
 }
 
-.btn-delete i {
+.btn-delete i,
+.btn-edit i {
   color: transparent;
 }
 

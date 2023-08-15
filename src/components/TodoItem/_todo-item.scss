@@ -20,6 +20,12 @@
         color: #dc3545;
       }
     }
+
+    .btn-edit {
+      i {
+        color: rgba($text-light, 0.5);
+      }
+    }
   }
 }
 
@@ -28,7 +34,8 @@
   color: rgba($text-light, 0.5);
 }
 
-.btn-delete {
+.btn-delete,
+.btn-edit {
   i {
     color: transparent;
   }
