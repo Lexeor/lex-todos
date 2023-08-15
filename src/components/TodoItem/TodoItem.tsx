@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, KeyboardEvent } from 'react';
 import {
   TodoItemType,
   toggleTodo,
@@ -10,12 +10,18 @@ import { useAppDispatch } from '../../redux/store';
 function TodoItem({ id, completed, title }: TodoItemType) {
   const [isEditing, setIsEditing] = useState(false);
   const [titleValue, setTitleValue] = useState(title);
-  const inlineInput = useRef(null);
+  const inlineInput = useRef<HTMLInputElement>(null);
 
   // Redux
   const dispatch = useAppDispatch();
 
   // Functions
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (inlineInput.current?.value !== '' && event.key === 'Enter') {
+      handleEditTodo(id);
+    }
+  };
+
   const handleToggleTodo = (id: number) => {
     dispatch(toggleTodo(id));
   };
@@ -56,6 +62,7 @@ function TodoItem({ id, completed, title }: TodoItemType) {
             ref={inlineInput}
             defaultValue={title}
             onChange={(e) => setTitleValue(e.target.value)}
+            onKeyDown={handleKeyDown}
             className="inline-input"
             autoFocus
           ></input>
