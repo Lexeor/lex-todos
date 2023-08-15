@@ -46,3 +46,12 @@
     color: transparent;
   }
 }
+
+.inline-input {
+  width: 100%;
+  background-color: $color-background-dark;
+  border: 0;
+  color: $text-light;
+  padding: 0.5em;
+  border-radius: $border-radius-s;
+}

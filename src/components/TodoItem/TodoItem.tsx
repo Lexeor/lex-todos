@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import {
   TodoItemType,
   toggleTodo,
@@ -8,6 +8,8 @@ import { useAppDispatch } from '../../redux/store';
 
 function TodoItem({ id, completed, title }: TodoItemType) {
   const [isEditing, setIsEditing] = useState(false);
+  const [titleValue, setTitleValue] = useState(title);
+  const inlineInput = useRef(null);
 
   // Redux
   const dispatch = useAppDispatch();
@@ -47,7 +49,19 @@ function TodoItem({ id, completed, title }: TodoItemType) {
       <button className="toggle-button" onClick={() => handleToggleTodo(id)}>
         {renderIcon}
       </button>
-      <span className={titleClass}>{title}</span>
+      <span className={titleClass}>
+        {isEditing ? (
+          <input
+            ref={inlineInput}
+            defaultValue={title}
+            onChange={(e) => setTitleValue(e.target.value)}
+            className="inline-input"
+            autoFocus
+          ></input>
+        ) : (
+          title
+        )}
+      </span>
       <button className={editButtonClass} onClick={() => handleEditTodo(id)}>
         {isEditing ? (
           <i className="ri-check-line"></i>
